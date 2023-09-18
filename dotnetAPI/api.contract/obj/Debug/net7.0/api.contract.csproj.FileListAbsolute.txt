@@ -1,0 +1,11 @@
+C:\Users\pc\Documents\web apps\camu-dev\dotnetAPI\api.contract\bin\Debug\net7.0\api.contract.deps.json
+C:\Users\pc\Documents\web apps\camu-dev\dotnetAPI\api.contract\bin\Debug\net7.0\api.contract.dll
+C:\Users\pc\Documents\web apps\camu-dev\dotnetAPI\api.contract\bin\Debug\net7.0\api.contract.pdb
+C:\Users\pc\Documents\web apps\camu-dev\dotnetAPI\api.contract\obj\Debug\net7.0\api.contract.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\Documents\web apps\camu-dev\dotnetAPI\api.contract\obj\Debug\net7.0\api.contract.AssemblyInfoInputs.cache
+C:\Users\pc\Documents\web apps\camu-dev\dotnetAPI\api.contract\obj\Debug\net7.0\api.contract.AssemblyInfo.cs
+C:\Users\pc\Documents\web apps\camu-dev\dotnetAPI\api.contract\obj\Debug\net7.0\api.contract.csproj.CoreCompileInputs.cache
+C:\Users\pc\Documents\web apps\camu-dev\dotnetAPI\api.contract\obj\Debug\net7.0\api.contract.dll
+C:\Users\pc\Documents\web apps\camu-dev\dotnetAPI\api.contract\obj\Debug\net7.0\refint\api.contract.dll
+C:\Users\pc\Documents\web apps\camu-dev\dotnetAPI\api.contract\obj\Debug\net7.0\api.contract.pdb
+C:\Users\pc\Documents\web apps\camu-dev\dotnetAPI\api.contract\obj\Debug\net7.0\ref\api.contract.dll
