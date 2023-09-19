@@ -25,7 +25,6 @@ const createAnnounce = async (req, res) => {
   }
 };
 const updateAnnounce = async (req, res) => {
-
   try {
     const result =  await announceModel.findByIdAndUpdate(req.params.id, req.body);
     if (result) {
@@ -41,7 +40,11 @@ const updateAnnounce = async (req, res) => {
 const getOneAnnounce = async (req, res) => {
   try {
     const announce = await announceModel.findById(req.params.id);
-    res.json({ data: announce, message: "ok", code: 200 });
+    if (announce){
+        res.json({ data: announce, message: "ok", code: 200 });
+    }else{
+        res.json({ data: null, message: "announce not found", code: 404 });
+    }
   } catch (err) {
     res.json({ message: err, code: 500 });
   }
@@ -49,8 +52,12 @@ const getOneAnnounce = async (req, res) => {
 
 const deleteAnnounce = async (req, res) => {
   try {
-    await announceModel.findByIdAndDelete(req.params.id);
+    const result =  await announceModel.findByIdAndDelete(req.params.id);
+    if (result) {
     res.json({ message: "deleted successfully" });
+    }else{
+        res.json({ message: "error during update", code: 500 });
+    }
   } catch (err) {
     res.json({ message: err, code: 500 });
   }
