@@ -1,4 +1,4 @@
-const announceModel = require("../models/announce.model");
+const announceModel = require("../model/announce.model");
 
 const getAnnounce = async (req, res) => {
   try {
@@ -6,7 +6,7 @@ const getAnnounce = async (req, res) => {
     res.json({ data: announce, message: "ok", code: 200 });
   } catch (error) {
     res.json({ message: `error:${error}`, code: 500 });
-  }
+  } 
 };
 const createAnnounce = async (req, res) => {
   try {
@@ -25,9 +25,14 @@ const createAnnounce = async (req, res) => {
   }
 };
 const updateAnnounce = async (req, res) => {
+
   try {
-    await announceModel.findByIdAndUpdate(req.params.id, req.body);
-    res.json({ message: "updated successfully" });
+    const result =  await announceModel.findByIdAndUpdate(req.params.id, req.body);
+    if (result) {
+    res.json({ message: "updated successfully", code:200 });
+    }else{
+        res.json({ message: "error during update", code: 500 });
+    }
   } catch (err) {
     res.json({ message: err, code: 500 });
   }
