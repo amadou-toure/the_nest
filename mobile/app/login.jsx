@@ -1,12 +1,29 @@
-import { StyleSheet, Text, View, TextInput, Button, ImageBackground, StatusBar, Pressable } from "react-native";
+import { StyleSheet, Text, View, TextInput, Button, ImageBackground, StatusBar, Pressable,Alert } from "react-native";
 import { Link } from "expo-router";
 import * as React from 'react';
 import bg from '../assets/img/login_bg.png'
-
-
+import authService from "../services/auth.service";
 
 
 export default function LogIn() {
+  const [username,setUsername]= React.useState('');
+  const [password, setPassword]= React.useState("");
+  const [credentials,setCredentials]= React.useState({'':''})
+  const testAlert = (message) =>
+    Alert.alert('test', message, [
+      {
+        text: "Cancel",
+        onPress: () => console.log("Cancel Pressed"),
+        style: "cancel",
+      },
+      { text: "OK", onPress: () => console.log("OK Pressed") },
+    ]);
+
+  const login=async()=>{
+    setCredentials({"username":username,"password":password})
+    testAlert(credentials)
+    
+  }
   return (
     
       <ImageBackground source={bg} blurRadius={1} style={{  flex: 1,
@@ -17,13 +34,15 @@ export default function LogIn() {
         <Text style={styles.subtitle}>Connexion</Text>
       </View>
       <View style={styles.main}>
-        <TextInput style={{width:'100%',justifyContent: "center",
+        <TextInput style=
+        {{width:'100%',justifyContent: "center",
     alignItems: "stretch",
     borderBottomWidth: 3,
     height: 50,
     borderColor: "#FFFFFF",}}
-          placeholder="Email"
-          placeholderTextColor="#fff"  />
+          placeholder="username"
+          placeholderTextColor="#fff"
+          onChangeText={(text)=>setUsername(text)}  />
         <TextInput style={{width:'100%',justifyContent: "center",
     alignItems: "stretch",
     borderBottomWidth: 3,
@@ -32,6 +51,7 @@ export default function LogIn() {
           secureTextEntry={true}
           placeholder="Password"
           placeholderTextColor="#fff" 
+          onChangeText={(text)=>setPassword(text)}
         />
           
       </View>
@@ -44,7 +64,8 @@ export default function LogIn() {
     height: '7%',
     borderRadius:8,
     marginBottom:0
-  }}>
+  }}
+  onPress={login}>
     <Text>Valider</Text>
       </Pressable>
       <View style={styles.footer}>
