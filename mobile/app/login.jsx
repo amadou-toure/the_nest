@@ -21,7 +21,7 @@ export default function LogIn() {
 
   const login=async()=>{
     setCredentials({"username":username,"password":password})
-    testAlert(credentials)
+   authService.Auth(credentials)
     
   }
   return (

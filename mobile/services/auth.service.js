@@ -1,7 +1,7 @@
 import { Button, Alert } from "react-native";
 const Auth = async (credentials) => {
-  const failAlert = () =>
-    Alert.alert("erreur", "non authentifier", [
+  const failAlert = (message) =>
+    Alert.alert("erreur", message, [
       {
         text: "Cancel",
         onPress: () => console.log("Cancel Pressed"),
@@ -29,7 +29,7 @@ const Auth = async (credentials) => {
   );
   const jsonData = await response.json();
   if (jsonData.code != 200) {
-    failAlert();
+    failAlert(jsonData.message);
   } else if ((jsonData.code = 200)) {
     successAlert(jsonData.data);
     //setUsersData(jsonData.data);
